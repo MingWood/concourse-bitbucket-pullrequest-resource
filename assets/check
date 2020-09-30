@@ -55,6 +55,9 @@ if [ "$rebuild_when_target_changed" == "true" ]; then
   prq_branch="merge"
 fi
 
+# delay after webhook to pick up pull requests
+sleep 5
+
 # collect all pull requests from uri
 REMOTES=$(git ls-remote "$uri")
 set +e
